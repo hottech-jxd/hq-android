@@ -28,7 +28,7 @@ class DetailActivity : BaseActivity<IPresenter>(),View.OnClickListener {
 
         header_left_image.setOnClickListener(this)
 
-        detail_image.setImageURI("http://app.infunpw.com/commons/images/cinema/cinema_films/3823.jpg")
+        goodsdetail_image.setImageURI("http://app.infunpw.com/commons/images/cinema/cinema_films/3823.jpg")
 
         for(i in 0 .. 10){
             data.add(DetailBean(i,0,"http://app.infunpw.com/commons/images/cinema/cinema_films/3823.jpg"))

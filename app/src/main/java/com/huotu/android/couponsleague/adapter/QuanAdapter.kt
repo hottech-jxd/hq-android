@@ -51,14 +51,14 @@ class QuanAdapter(data:ArrayList<Quan>) :BaseQuickAdapter< Quan ,BaseViewHolder>
 
         helper!!.getView<ExpandableTextView>(R.id.quan_item_one_content).text= item!!.content
 
-        if(imageView==null) {
+        //if(imageView==null) {
             imageView = ImageView(mContext)
-        }else{
-            if (imageView!!.parent != null) {
-                val viewGroup = imageView!!.parent as ViewGroup
-                viewGroup.removeView(imageView)
-            }
-        }
+//        }else{
+//            if (imageView!!.parent != null) {
+//                val viewGroup = imageView!!.parent as ViewGroup
+//                viewGroup.removeView(imageView)
+//            }
+//        }
 
 
         imageView!!.scaleType = ImageView.ScaleType.CENTER_CROP

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.view.View
 import android.view.WindowManager
+import android.webkit.PermissionRequest
 import com.huotu.android.couponsleague.BuildConfig
 import com.huotu.android.couponsleague.R
 import com.huotu.android.couponsleague.base.BaseActivity
@@ -13,7 +14,7 @@ import com.huotu.android.couponsleague.base.BaseApplication
 import com.huotu.android.couponsleague.bean.*
 import com.huotu.android.couponsleague.mvp.contract.SplashContract
 import com.huotu.android.couponsleague.utils.*
-import com.huotu.android.phonerecycle.mvp.presenter.SplashPresenter
+import com.huotu.android.couponsleague.mvp.presenter.SplashPresenter
 import kotlinx.android.synthetic.main.activity_splash.*
 import permissions.dispatcher.*
 
@@ -28,6 +29,7 @@ class SplashActivity : BaseActivity<SplashContract.Presenter>() , SplashContract
         //setAnimation()
 
         checkPermissionWithPermissionCheck()
+
     }
 
     override fun setStatusBar() {
@@ -95,19 +97,19 @@ class SplashActivity : BaseActivity<SplashContract.Presenter>() , SplashContract
         onRequestPermissionsResult(requestCode , grantResults)
     }
 
-    @OnShowRationale(Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE)
-    fun showRationaleForCamera(request: PermissionRequest) {
-        showRationaleDialog( "使用app，需要相关权限" , request)
-    }
+//    @OnShowRationale(Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//    fun showRationaleForCamera(request: PermissionRequest) {
+//        showRationaleDialog( "使用app，需要相关权限" , request)
+//    }
 
-    private fun showRationaleDialog( message : String , request: PermissionRequest) {
-        AlertDialog.Builder(this)
-                .setPositiveButton("允许") { _, _ -> request.proceed() }
-                .setNegativeButton("拒绝") { _, _ -> request.cancel() }
-                .setCancelable(false)
-                .setMessage(message)
-                .show()
-    }
+//    private fun showRationaleDialog( message : String , request: PermissionRequest) {
+//        AlertDialog.Builder(this)
+//                .setPositiveButton("允许") { _, _ -> request. }
+//                .setNegativeButton("拒绝") { _, _ -> request.cancel() }
+//                .setCancelable(false)
+//                .setMessage(message)
+//                .show()
+//    }
 
     @OnPermissionDenied(Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE)
     fun onCameraDenied() {

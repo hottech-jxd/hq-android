@@ -1,4 +1,4 @@
-package com.huotu.android.phonerecycle.mvp.presenter
+package com.huotu.android.couponsleague.mvp.presenter
 
 
 import com.huotu.android.couponsleague.bean.ApiResult
